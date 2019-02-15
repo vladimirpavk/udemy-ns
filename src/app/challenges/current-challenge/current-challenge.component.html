@@ -1,4 +1,4 @@
-<StackLayout>
+<!-- <StackLayout>
     <TextField
         class="txtField"
         hint="Write new challenge description"
@@ -15,4 +15,36 @@
         class="title"
     >  
     </Label>
-</StackLayout>
+</StackLayout> -->
+
+<GridLayout
+    rows="auto, 10, *"
+    columns="2*, 5, *"
+>
+    <TextField
+        class="txtField"
+        hint="Write new challenge description"
+        [(ngModel)]="challengeDescription"    
+        row="0"    
+        col="0"
+    >
+    </TextField>
+
+    <Button 
+        class="btn"
+        (tap)="setChallenge()"
+        text="SET CHALLENGE"
+        row="0"
+        col="2"
+    >
+    </Button>
+
+    <Label
+        [text]="newChallengeDescription"
+        class="title"
+        row="2"
+        col="0"
+        colSpan="3"
+    >  
+    </Label>
+</GridLayout>

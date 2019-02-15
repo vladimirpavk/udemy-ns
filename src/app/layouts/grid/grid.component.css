@@ -1,7 +1,7 @@
 Label {    
     border-width: 3;
-    height:50;     
-    width: 50;
+    /*height:50;     
+    width: 50;*/
     color: white;    
 }
 
@@ -22,4 +22,12 @@ StackLayout{
 
 #id3{
     background: blue;
+}
+
+#id4{
+    background: purple;
+}
+
+#id5{
+    background: black;
 }
