@@ -8,6 +8,7 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { StackedComponent } from "~/app/layouts/stacked/stacked.component";
 import { FlexBoxComponent } from "~/app/layouts/flexbox/flexbox.component";
 import { GridComponent } from "~/app/layouts/grid/grid.component";
+import { ChallengeEditComponent } from "~/app/challenges/challenge-edit/challenge-edit.component";
 
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
 // import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
@@ -23,6 +24,7 @@ import { GridComponent } from "~/app/layouts/grid/grid.component";
     declarations: [
         AppComponent,
         CurrentChallengeComponent,
+        ChallengeEditComponent,
         StackedComponent,
         FlexBoxComponent,
         GridComponent

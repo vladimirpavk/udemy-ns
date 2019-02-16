@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector: 'ns-current-challenge',
@@ -8,17 +8,10 @@ import { Component } from "@angular/core";
         './current-challenge.component.css'
     ]
 })
-export class CurrentChallengeComponent{
-    private challengeDescription: string = '';
-    private newChallengeDescription: string = '';
+export class CurrentChallengeComponent{    
+    @Input() private newChallengeDescription: string = '';
 
     constructor(){
 
-    }
-
-    private setChallenge(){
-        console.log(this.challengeDescription);
-        this.newChallengeDescription = this.challengeDescription;
-        console.log(this.newChallengeDescription);
     }
 }

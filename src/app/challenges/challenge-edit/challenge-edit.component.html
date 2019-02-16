@@ -1,0 +1,16 @@
+<FlexBoxLayout flexDirection="row" justifyContent="space-between">
+    <TextField
+        class="txtField"
+        hint="Write new challenge description"
+        [(ngModel)]="challengeDescription"           
+    >
+    </TextField>
+
+    <Button 
+        class="btn"
+        (tap)="setChallenge()"
+        text="SET CHALLENGE"       
+    >
+    </Button>
+</FlexBoxLayout>
+   
