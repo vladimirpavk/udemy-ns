@@ -20,5 +20,5 @@ export class ChallengeEditComponent{
     private setChallenge(){
         this.challengeEmmited.emit(this.challengeDescription);
     }
-   
+    
 }

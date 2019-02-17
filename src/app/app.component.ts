@@ -6,11 +6,12 @@ import { Component } from "@angular/core";
     templateUrl: "./app.component.html"
 })
 export class AppComponent {
-    private newChall:string = '';
+    
+    private challenges:string[] = [];
 
     constructor(){}
 
     private newChallenge(nc:string):void{
-        this.newChall = nc;
+        this.challenges.push(nc);
     }
  }
