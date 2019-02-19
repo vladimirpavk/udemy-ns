@@ -9,11 +9,16 @@
         </StackLayout>
 </ScrollView>-->
 
-<ListView [items]="challenges" (itemTamp)="onChallengeTap($event)">
+<!-- <ListView [items]="challenges" (itemTamp)="onChallengeTap($event)">
     <ng-template let-challenge="item" let-index="index">
         <GridLayout rows="40, 20" columns="50, *">
             <Label [text]="index" row="0" col="0" colSpan="2"></Label>
             <Label [text]="challenge" row="0" col="1"></Label>                       
         </GridLayout>
     </ng-template>
-</ListView>
+</ListView> -->
+
+<FlexBoxLayout flexDirection="row" justifyContent="space-between">   
+      <Label text="Current challenge component">        
+      </Label>      
+</FlexBoxLayout>
