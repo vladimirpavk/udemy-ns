@@ -2,10 +2,13 @@ import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
+import { AppRoutingModule } from "~/app/app-routing.module";
+
 import { AppComponent } from "./app.component";
 import { CurrentChallengeComponent } from "~/app/challenges/current-challenge/current-challenge.component";
 import { ChallengeEditComponent } from "~/app/challenges/challenge-edit/challenge-edit.component";
 import { AuthComponent } from './auth/auth.component';
+import { TodayComponent } from './today/today.component';
 
 @NgModule({
    bootstrap: [
@@ -13,13 +16,15 @@ import { AuthComponent } from './auth/auth.component';
    ],
    imports: [
       NativeScriptModule,
-      NativeScriptFormsModule
+      NativeScriptFormsModule,
+      AppRoutingModule
    ],
    declarations: [
       AppComponent,
       CurrentChallengeComponent,
-      ChallengeEditComponent,   
-      AuthComponent
+      ChallengeEditComponent,
+      AuthComponent,
+      TodayComponent
    ],
    providers: [],
    schemas: [

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({
   selector: 'ns-auth',
@@ -8,6 +10,12 @@ import { Component } from '@angular/core';
 })
 export class AuthComponent {
 
-  constructor() { }
+  constructor(
+    private router:RouterExtensions
+  ) { }
 
+/*   private onSignIn():void{
+    this.router.navigate(['/today']);
+  }
+ */
 }

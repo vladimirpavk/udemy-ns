@@ -1,10 +1,13 @@
 <!-- https://docs.nativescript.org/angular/core-concepts/angular-navigation.html#page-router-outlet -->
-<StackLayout>
+<!-- <StackLayout>
   <!--   <ns-challenge-edit (challengeEmmited)="newChallenge($event)"></ns-challenge-edit>
     <ns-current-challenge [challenges]="challenges"></ns-current-challenge>    -->
-    <ns-challenge-edit>     
+    <!-- <ns-challenge-edit>     
     </ns-challenge-edit>
     <ns-current-challenge>        
-    </ns-current-challenge
-    >
+    </ns-current-challenge>
+</StackLayout> -->
+
+<StackLayout>
+  <router-outlet></router-outlet>
 </StackLayout>
