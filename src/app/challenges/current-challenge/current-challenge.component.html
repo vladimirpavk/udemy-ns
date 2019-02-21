@@ -18,7 +18,9 @@
     </ng-template>
 </ListView> -->
 
-<FlexBoxLayout flexDirection="row" justifyContent="space-between">   
+<ns-action-bar title="Current challenge"></ns-action-bar>
+
+<StackLayout>
       <Label text="Current challenge component">        
       </Label>      
       <Button
@@ -26,4 +28,4 @@
         (tap)="onEditChallenge()"
       >
       </Button>
-</FlexBoxLayout>
+</StackLayout>
