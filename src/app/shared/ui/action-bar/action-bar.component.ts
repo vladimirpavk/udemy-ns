@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { isAndroid } from 'platform';
 import { Page } from 'tns-core-modules/ui/page';
+import { UiServiceService } from '~/app/shared/ui/uiService.service';
 
 declare var android: any;
 
@@ -13,7 +14,10 @@ declare var android: any;
 export class ActionBarComponent implements OnInit {
   @Input() title: string;
 
-  constructor(private page: Page) {}
+  constructor(
+    private page: Page,
+    private uiService: UiServiceService
+  ) {}
 
   ngOnInit() {}
 
@@ -29,4 +33,10 @@ export class ActionBarComponent implements OnInit {
       }
     }
   }
+
+  private navButtonTapped():void{
+    console.log('navButtonTapped');
+    this.uiService.toogleDrawer();
+  }
+
 }

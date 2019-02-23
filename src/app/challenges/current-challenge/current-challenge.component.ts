@@ -13,8 +13,7 @@ export class CurrentChallengeComponent{
 
     constructor(private router:RouterExtensions){}
     
-    private onEditChallenge(){
-        console.log('onEditChallenge');
-        this.router.navigate(['/challenge-edit']);
+    private onEditChallenge(){        
+        this.router.navigate(['challenges/edit']);
     }
 }
