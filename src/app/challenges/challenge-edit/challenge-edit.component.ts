@@ -14,25 +14,22 @@ import { Subscription } from "rxjs";
 export class ChallengeEditComponent implements OnInit, OnDestroy{ 
     
     private _subscriptions:Subscription[] = [];
+    private _actionBarTitle:string = '';
 
     constructor(
         private activatedRoute:ActivatedRoute,
         private pageRoute:PageRoute
     ){}
 
-    ngOnInit(){
-        /* this.activatedRoute.paramMap.subscribe(
-            (params:ParamMap)=>{
-                console.log(params.get('mode'));
-            }
-        );*/
+    ngOnInit(){      
         this._subscriptions.push(
             this.pageRoute.activatedRoute.subscribe(            
                 (activatedRoute)=>{
                     this._subscriptions.push(
                         activatedRoute.paramMap.subscribe(
                             (params:ParamMap)=>{
-                                console.log(params.get('mode'));
+                                this._actionBarTitle=params.get('mode').charAt(0).toUpperCase()
+                                +params.get('mode').substring(1)+ ' Challenge';
                             }
                         )
                     )

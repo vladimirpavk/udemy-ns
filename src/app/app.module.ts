@@ -12,6 +12,7 @@ import { AuthComponent } from './auth/auth.component';
 import { TodayComponent } from './challenges/today/today.component';
 import { ActionBarComponent } from "~/app/shared/ui/action-bar/action-bar.component";
 import { ChallengeTabsComponent } from "~/app/challenges/challenge-tabs/challenge-tabs.component";
+import { DayModalComponent } from "~/app/challenges/day-modal/day-modal.component";
 
 @NgModule({
    bootstrap: [
@@ -30,11 +31,15 @@ import { ChallengeTabsComponent } from "~/app/challenges/challenge-tabs/challeng
       AuthComponent,
       TodayComponent,
       ActionBarComponent,
-      ChallengeTabsComponent
+      ChallengeTabsComponent,
+      DayModalComponent
    ],
    providers: [],
    schemas: [
       NO_ERRORS_SCHEMA
+   ],
+   entryComponents:[
+       DayModalComponent
    ]
 })
 /*

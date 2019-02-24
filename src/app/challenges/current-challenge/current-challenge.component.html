@@ -1,11 +1,20 @@
-<ns-action-bar title="Current challenge"></ns-action-bar>
+<ns-action-bar title="Current challenge">
+  <ActionItem
+    android.position="actionBar"
+    nsRouterLink="/challenges/replace"
+  >
+  <Label text="Replace"></Label>
+  </ActionItem>
+  <ActionItem
+    android.position="actionBar"
+    nsRouterLink="/challenges/edit"
+  >
+  <Label text="Edit"></Label>
+  </ActionItem>  
+</ns-action-bar>
 
 <StackLayout>
       <Label text="Current challenge component">        
       </Label>      
-      <Button
-        text="Edit Challenge"
-        (tap)="onEditChallenge()"
-      >
-      </Button>
+     <Button text="Change status" (tap)="onChangeStatusTapped()"></Button>
 </StackLayout>
