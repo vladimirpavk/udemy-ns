@@ -20,7 +20,14 @@ export class CurrentChallengeComponent{
         this.modal.showModal(DayModalComponent,
         {
             fullscreen:true,
-            viewContainerRef: this.vcRef
-        });
+            viewContainerRef: this.vcRef,
+            context: {
+                date: new Date()
+            } 
+        }).then(
+            (res:string)=>{
+                console.log(res);
+            }
+        )
     }
 }
