@@ -33,7 +33,6 @@ export class ChallengeTabsComponent implements OnInit {
       }
     );    
     this.page.actionBarHidden = true;
-    
   }
 
 }

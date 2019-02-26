@@ -13,6 +13,7 @@ import { TodayComponent } from './challenges/today/today.component';
 import { ActionBarComponent } from "~/app/shared/ui/action-bar/action-bar.component";
 import { ChallengeTabsComponent } from "~/app/challenges/challenge-tabs/challenge-tabs.component";
 import { DayModalComponent } from "~/app/challenges/day-modal/day-modal.component";
+import { ChallengesModule } from "~/app/challenges/challenges.module";
 
 @NgModule({
    bootstrap: [
@@ -22,17 +23,13 @@ import { DayModalComponent } from "~/app/challenges/day-modal/day-modal.componen
       NativeScriptModule,
       NativeScriptFormsModule,
       AppRoutingModule,
-      NativeScriptUISideDrawerModule
+      NativeScriptUISideDrawerModule,
+      ChallengesModule
    ],
    declarations: [
-      AppComponent,
-      CurrentChallengeComponent,
-      ChallengeEditComponent,
-      AuthComponent,
-      TodayComponent,
-      ActionBarComponent,
-      ChallengeTabsComponent,
-      DayModalComponent
+      AppComponent,    
+      AuthComponent,      
+      ActionBarComponent
    ],
    providers: [],
    schemas: [

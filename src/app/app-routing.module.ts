@@ -3,21 +3,11 @@ import { Routes } from '@angular/router';
 import { NativeScriptRouterModule } from 'nativescript-angular/router';
 
 import { AuthComponent } from './auth/auth.component';
-import { TodayComponent } from '~/app/challenges/today/today.component';
-import { CurrentChallengeComponent } from '~/app/challenges/current-challenge/current-challenge.component';
-import { ChallengeEditComponent } from '~/app/challenges/challenge-edit/challenge-edit.component';
-import { ChallengeTabsComponent } from '~/app/challenges/challenge-tabs/challenge-tabs.component';
+import { ChallengesRoutingModule } from '~/app/challenges/challenges-routing.module';
 
 const routes:Routes = [
     { path: '', component: AuthComponent },
-    { path: 'challenges', children:[
-        { path: 'tabs', component: ChallengeTabsComponent, children:[
-            { path: 'today', component: TodayComponent, outlet: 'today' },
-            { path: 'current-challenge', component: CurrentChallengeComponent, outlet:'currentChallenge' }
-        ] },                
-        { path: ':mode', component:ChallengeEditComponent },
-        { path: '', redirectTo:'/challenges/tabs', pathMatch: 'full'}
-    ]}    
+    { path: 'challenges', loadChildren: '~/app/challenges/challenges.module#ChallengesModule'}
 ];
 
 @NgModule({
