@@ -1,27 +1,34 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 import { Routes } from '@angular/router';
 import { NativeScriptRouterModule } from 'nativescript-angular/router';
 
-import { ChallengeTabsComponent } from "~/app/challenges/challenge-tabs/challenge-tabs.component";
-import { TodayComponent } from "~/app/challenges/today/today.component";
-import { CurrentChallengeComponent } from "~/app/challenges/current-challenge/current-challenge.component";
-import { ChallengeEditComponent } from "~/app/challenges/challenge-edit/challenge-edit.component";
+import { ChallengeTabsComponent } from './challenge-tabs/challenge-tabs.component';
+import { TodayComponent } from './today/today.component';
+import { CurrentChallengeComponent } from './current-challenge/current-challenge.component';
 
-const routes:Routes = [        
-        { path: 'tabs', component: ChallengeTabsComponent, children:[
-            { path: 'today', component: TodayComponent, outlet: 'today' },
-            { path: 'current-challenge', component: CurrentChallengeComponent, outlet:'currentChallenge' }
-        ] },                
-        { path: ':mode', component:ChallengeEditComponent },
-        { path: '', redirectTo:'/challenges/tabs', pathMatch: 'full'}
-    ];
+const routes: Routes = [
+  {
+    path: 'tabs',
+    component: ChallengeTabsComponent,
+    children: [
+      { path: 'today', component: TodayComponent, outlet: 'today' },
+      {
+        path: 'current-challenge',
+        component: CurrentChallengeComponent,
+        outlet: 'currentChallenge'
+      }
+    ]
+  },
+  {
+    path: ':mode',
+    loadChildren:
+      '~/app/challenges/challenge-edit/challenge-edit.module#ChallengeEditModule'
+  },
+  { path: '', redirectTo: '/challenges/tabs', pathMatch: 'full' }
+];
 
 @NgModule({
-    imports:[
-        NativeScriptRouterModule.forChild(routes)
-    ],
-    exports:[
-        NativeScriptRouterModule
-    ]
+  imports: [NativeScriptRouterModule.forChild(routes)],
+  exports: [NativeScriptRouterModule]
 })
-export class ChallengesRoutingModule{}
+export class ChallengesRoutingModule {}
