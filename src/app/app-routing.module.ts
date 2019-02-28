@@ -7,8 +7,7 @@ import { AuthComponent } from './auth/auth.component';
 const routes: Routes = [
   { path: '', component: AuthComponent },
   {
-    path: 'challenges',
-    loadChildren: '~/app/challenges/challenges.module#ChallengesModule'
+    path: 'challenges', loadChildren: '~/app/challenges/challenges.module#ChallengesModule'
   }
 ];
 

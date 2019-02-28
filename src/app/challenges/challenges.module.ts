@@ -13,6 +13,10 @@ import { SharedModule } from '../shared/shared.module';
     CurrentChallengeComponent,
     TodayComponent
   ],
-  imports: [NativeScriptCommonModule, ChallengesRoutingModule, SharedModule]
+  imports: [
+      NativeScriptCommonModule,
+      ChallengesRoutingModule,
+      SharedModule
+    ]
 })
 export class ChallengesModule {}
