@@ -31,3 +31,7 @@ typings/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# SASS compiledđ
+app.android.css
+app.ios.css

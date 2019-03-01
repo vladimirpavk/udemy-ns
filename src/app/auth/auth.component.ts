@@ -14,11 +14,6 @@ export class AuthComponent {
     private router:RouterExtensions
   ) { }
 
-/*   private onSignIn():void{
-    this.router.navigate(['/today']);
-  }
- */
-
  private onButtonTap(){
    console.log('auth.component - Button tapped');
  }
