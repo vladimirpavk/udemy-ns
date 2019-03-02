@@ -8,7 +8,7 @@ import { Subscription } from "rxjs";
     templateUrl: './challenge-edit.component.html',
     moduleId: module.id,
     styleUrls: [
-        './challenge-edit.component.css'
+        './challenge-edit.component.scss'
     ]
 })
 export class ChallengeEditComponent implements OnInit, OnDestroy{ 

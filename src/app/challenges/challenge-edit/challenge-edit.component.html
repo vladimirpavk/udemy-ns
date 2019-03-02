@@ -1,8 +1,14 @@
 <ns-action-bar [title]="_actionBarTitle"></ns-action-bar>
 
-<FlexBoxLayout flexDirection="row" justifyContent="space-between">
-    <Label
-        text="Challenge edit component">        
-    </Label>
+<FlexBoxLayout class="form">
+    <StackLayout class="input-field">
+        <Label text="Title" class="label font-weight-bold m-b-5"></Label>
+        <TextField class="input"></TextField>        
+    </StackLayout>
+    <StackLayout class="input-field">
+        <Label text="Description" class="label font-weight-bold m-b-5"></Label>
+        <TextField class="input"></TextField>
+    </StackLayout>
+    <Button class="btn btn-primary" text="Save"></Button>
 </FlexBoxLayout>
    
