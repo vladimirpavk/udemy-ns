@@ -1,8 +1,11 @@
-<ns-action-bar title="Today's challenge !!!"></ns-action-bar>
+<ns-action-bar
+  title="Today's Challenge"
+  [showBackButton]="false"
+></ns-action-bar>
 
-<FlexboxLayout>  
-  <Button class="btn btn-success" text="Completed"></Button>
-  <Button class="btn btn-failed" text="Failed"></Button>
-  <Button class="btn btn-flat" text="Reset"></Button>
-</FlexboxLayout>
-
+<GridLayout>
+  <ns-challenge-actions
+    (actionSelect)="onActionSelected($event)"
+    cancelText="Reset"
+  ></ns-challenge-actions>
+</GridLayout>

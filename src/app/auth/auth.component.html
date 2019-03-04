@@ -1,8 +1,13 @@
+<ns-action-bar
+  title="Login"
+  [showBackButton]="false"
+  [hasMenu]="false"
+></ns-action-bar>
 <StackLayout>
-    <Button
-        text="Sign in"
-        class="btn btn-primary"        
-        nsRouterLink="/challenges/tabs"        
-    ></Button>
+  <Button
+    text="Login"
+    class="btn btn-primary btn-rounded-lg"
+    nsRouterLink="/challenges"
+    [clearHistory]="true"
+  ></Button>
 </StackLayout>
-

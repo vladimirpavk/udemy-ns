@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({
@@ -8,13 +7,12 @@ import { RouterExtensions } from 'nativescript-angular/router';
   styleUrls: ['./auth.component.css'],
   moduleId: module.id
 })
-export class AuthComponent {
+export class AuthComponent implements OnInit {
+  constructor(private router: RouterExtensions) {}
 
-  constructor(
-    private router:RouterExtensions
-  ) { }
+  ngOnInit() {}
 
- private onButtonTap(){
-   console.log('auth.component - Button tapped');
- }
+  onSignin() {
+    this.router.navigate(['/today'], { clearHistory: true });
+  }
 }

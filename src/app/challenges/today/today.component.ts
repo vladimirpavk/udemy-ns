@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./today.component.css'],
   moduleId: module.id
 })
-export class TodayComponent {
+export class TodayComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-
+  onActionSelected(action: 'complete' | 'fail' | 'cancel') {
+    console.log(action);
+  }
 }

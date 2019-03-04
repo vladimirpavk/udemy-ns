@@ -1,49 +1,33 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { ActivatedRoute, ParamMap } from "@angular/router";
-import { PageRoute } from "nativescript-angular/router";
-import { Subscription } from "rxjs";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PageRoute } from 'nativescript-angular/router';
 
 @Component({
-    selector: 'ns-challenge-edit',
-    templateUrl: './challenge-edit.component.html',
-    moduleId: module.id,
-    styleUrls: [
-        './challenge-edit.component.scss'
-    ]
+  selector: 'ns-challenge-edit',
+  templateUrl: './challenge-edit.component.html',
+  styleUrls: ['./challenge-edit.component.scss'],
+  moduleId: module.id
 })
-export class ChallengeEditComponent implements OnInit, OnDestroy{ 
-    
-    private _subscriptions:Subscription[] = [];
-    private _actionBarTitle:string = '';
+export class ChallengeEditComponent implements OnInit {
+  isCreating = true;
 
-    constructor(
-        private activatedRoute:ActivatedRoute,
-        private pageRoute:PageRoute
-    ){}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private pageRoute: PageRoute
+  ) {}
 
-    ngOnInit(){      
-        this._subscriptions.push(
-            this.pageRoute.activatedRoute.subscribe(            
-                (activatedRoute)=>{
-                    this._subscriptions.push(
-                        activatedRoute.paramMap.subscribe(
-                            (params:ParamMap)=>{
-                                this._actionBarTitle=params.get('mode').charAt(0).toUpperCase()
-                                +params.get('mode').substring(1)+ ' Challenge';
-                            }
-                        )
-                    )
-                }
-            )        
-        );
-    }
-
-    ngOnDestroy(){
-        this._subscriptions.forEach(
-            (subscription:Subscription)=>{
-                subscription.unsubscribe();
-            }
-        )
-    }
-    
+  ngOnInit() {
+    // this.activatedRoute.paramMap.subscribe(paramMap => {
+    //   console.log(paramMap.get('mode'));
+    // });
+    this.pageRoute.activatedRoute.subscribe(activatedRoute => {
+      activatedRoute.paramMap.subscribe(paramMap => {
+        if (!paramMap.has('mode')) {
+          this.isCreating = true;
+        } else {
+          this.isCreating = paramMap.get('mode') !== 'edit';
+        }
+      });
+    });
+  }
 }
