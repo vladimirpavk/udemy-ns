@@ -4,12 +4,19 @@
 ></ns-action-bar>
 <FlexboxLayout class="form">
   <StackLayout class="input-field">
-    <Label class="label" text="Title"></Label>
-    <TextField class="input"></TextField>
+    <Label class="label" text="Title2"></Label>
+    <TextField
+      class="input"
+      returnKeyType="next"      
+      required
+    ></TextField>
   </StackLayout>
   <StackLayout class="input-field">
     <Label class="label" text="Description"></Label>
-    <TextField class="input"></TextField>
+    <TextView
+      class="input"
+      returnKeyType="done"
+    ></TextView>
   </StackLayout>
   <Button class="btn btn-primary" text="Save"></Button>
 </FlexboxLayout>

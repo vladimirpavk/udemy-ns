@@ -30,4 +30,9 @@ export class ChallengeEditComponent implements OnInit {
       });
     });
   }
+
+  private onReturnPress(event:any){
+    console.log(event);
+  }
+
 }
