@@ -2,21 +2,50 @@
   [title]="isCreating ? 'Replace Challenge' : 'Edit Challenge'"
   [hasMenu]="false"
 ></ns-action-bar>
+
 <FlexboxLayout class="form">
   <StackLayout class="input-field">
-    <Label class="label" text="Title2"></Label>
+    <Label
+      class="label"
+      text="Title"
+      [ngClass]="{invalid: (!title.valid && title.touched)}"
+    ></Label>
     <TextField
       class="input"
       returnKeyType="next"      
       required
+      ngModel
+      #title="ngModel"      
     ></TextField>
+    <Label
+      *ngIf="!title.valid && title.touched"
+      class="label"
+      text="Please enter valid title">
+    </Label>
   </StackLayout>
   <StackLayout class="input-field">
-    <Label class="label" text="Description"></Label>
+    <Label
+      [ngClass]="{invalid: !desc.valid && desc.touched}"
+      class="label"
+      text="Description"      
+    ></Label>
     <TextView
       class="input"
       returnKeyType="done"
-    ></TextView>
+      ngModel
+      #desc="ngModel"
+      required
+    ></TextView>    
+    <Label
+      *ngIf="(!desc.valid && desc.touched)"
+      class="label"      
+      text="Please enter valid description"
+    ></Label>
   </StackLayout>
-  <Button class="btn btn-primary" text="Save"></Button>
+  <Button
+    class="btn btn-primary"
+    text="Save"
+    [isEnabled]="title.valid && desc.valid"
+    (tap)="onSubmit({title: title.value, description:desc.value})"
+  ></Button>
 </FlexboxLayout>

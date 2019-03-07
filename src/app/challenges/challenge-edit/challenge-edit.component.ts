@@ -35,4 +35,8 @@ export class ChallengeEditComponent implements OnInit {
     console.log(event);
   }
 
+  private onSubmit(value:{title:string, description:string}):void{  
+    console.log(value.title+' - '+value.description);
+  }
+
 }
