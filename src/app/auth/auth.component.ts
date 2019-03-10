@@ -16,16 +16,23 @@ export class AuthComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
-      email: new FormControl(null, Validators.email),
-      password: new FormControl(null, [Validators.min(6)])
+      email: new FormControl(null, {
+        updateOn:'blur',
+        validators: [Validators.email]
+      }),
+      password: new FormControl(null, {
+        updateOn: 'blur',
+        validators: [Validators.min(6)] 
+      })
     });
   }
 
-  onSignin() {
+  /*onSignin() {
     this.router.navigate(['/today'], { clearHistory: true });
-  }
+  }*/
 
   private onSubmit(){
-
+    console.log(this.form.valid);
+    console.log();
   }
 }

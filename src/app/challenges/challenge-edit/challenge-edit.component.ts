@@ -32,7 +32,7 @@ export class ChallengeEditComponent implements OnInit {
   }
 
   private onReturnPress(event:any){
-    console.log(event);
+    //console.log(event);
   }
 
   private onSubmit(value:{title:string, description:string}):void{  
